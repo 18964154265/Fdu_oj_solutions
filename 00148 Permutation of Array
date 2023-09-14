@@ -1,0 +1,23 @@
+#include<stdio.h>
+int main()
+{
+	int n; int i, j, k;
+	scanf("%d", &n);
+	int a[10] = { 0 };
+	for (int i = 1; i <= n; i++)scanf("%d", &a[i]);
+	for (i = n; i >= 2; i--){
+		if (a[i]>a[i - 1]){ k = i - 1; break; }
+	}
+	for (i = n; i >= k + 1; i--){
+		if (a[i] > a[k]){ int t; t = a[k]; a[k] = a[i]; a[i] = t; break; }
+	}
+	for (i = k + 1; i <= n - 1; i++){
+		for (j = i + 1; j <= n; j++){
+			if (a[i]>a[j]){ int t; t = a[i]; a[i] = a[j]; a[j] = t; }
+		}
+	}
+	for (i = 1; i <= n; i++)printf("%d ", a[i]);
+
+
+	return 0;
+}
