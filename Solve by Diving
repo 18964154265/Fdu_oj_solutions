@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<math.h>
+#define E 0.00001
+double f(double x){
+	double z; z = x*x*x - x*x - 1;
+	return z;
+}
+int main()
+{
+	double mid;
+	double begin = 0, end = 3;
+	while (1){
+		double mid = 0.5*(begin + end);
+		if (f(mid) == 0){ printf("%.5f", mid); break; }
+		if (f(mid)*f(begin)>0)begin = end; else;
+		end = mid;
+
+	}
+
+	return 0;
+}
