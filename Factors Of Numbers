@@ -1,0 +1,22 @@
+#include<stdio.h>
+#define N 100
+int fac[N] = { 0 };
+int main()
+{
+	int num; int i = 1; int j = 1;
+	scanf("%d", &num); int Num = num;
+	while (num > 1){
+		i++;
+		if (num%i == 0)
+		{
+			fac[j] = i; j++; num /= i; i = 2;
+		}
+	}
+	int k = j - 1;
+	printf("%d=%d", Num, fac[1]);
+	if (j >= 2){
+		for (j = 2; j <= k; j++)printf("*%d", fac[j]);
+	}
+
+	return 0;
+}
