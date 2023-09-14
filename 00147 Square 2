@@ -1,0 +1,18 @@
+#include<stdio.h>
+int main()
+{
+	int a[15][15] = { 0 };
+	int n;
+	scanf("%d", &n);
+	int i = 1, j = 1, turn = 0, num = 1; a[1][1] = 1;
+	while (num<n*n){
+		while (a[i][j + 1] == 0 && j<n)a[i][++j] = ++num;
+		while (a[i + 1][j] == 0 && i<n)a[++i][j] = ++num;
+		while (a[i][j - 1] == 0 && j>1)a[i][--j] = ++num;
+		while (a[i - 1][j] == 0 && i>1)a[--i][j] = ++num;
+	}for (i = 1; i <= n; i++){
+		for (j = 1; j <= n; j++)printf("%4d", a[i][j]);
+		printf("\n");
+	}
+		return 0;
+	}
