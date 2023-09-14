@@ -1,0 +1,15 @@
+#include<stdio.h>
+#define N 1000000
+int a[N];
+int main()
+{
+	int n, i;
+	scanf("%d", &n);
+	for (int i = 1; i <= n; i++)scanf("%d", &a[i]);
+	for (int i = 1; i <= n; i++)
+	{
+		int t; for (int j = i; j <= n; j++){ int k = i; if (a[k] > a[j]) { t = a[k]; a[k] = a[j]; a[j] = t; } }
+	}
+	for (i = 1; i <= n; i++)printf("%d ", a[i]);
+	return 0;
+}
