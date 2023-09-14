@@ -1,0 +1,12 @@
+#include<stdio.h>
+int main()
+{
+  int BJT,UTC;
+  scanf("%d",&BJT);
+  int hour=BJT/100,Hour;
+  if(BJT<=859) Hour=16+hour;
+  else         Hour=hour-8;
+  int min=BJT%100;
+  UTC=Hour*100+min;
+  printf("%d",UTC);
+}
