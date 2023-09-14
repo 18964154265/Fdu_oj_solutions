@@ -1,0 +1,50 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define N 15
+int main()
+{
+	int i, j, k, n;
+	scanf("%d", &n);
+	int num = 1;
+	int a[N][N] = { -1 };
+	for (k = 0; k < 2 * n - 1; k++;{
+		if (k % 2 == 0) {
+			if (k < n){
+				for (i = 0; i <= k; i++){
+					j = k - i;
+					a[i][j] = num;
+					num++;
+				}
+			}
+			else{
+				for (i = k - n+ 1; i <= n- 1; i++){
+					j = k - i;
+					a[i][j] = num;
+					num++;
+				}
+			}
+		}
+		else {
+			if (k < n){
+				for (i = k; i >= 0; i--){
+					j = k - i;
+					a[i][j] = num;
+					num++;
+				}
+			}
+			else{
+				for (i = n- 1; i >= k - n + 1; i--){
+					j = k - i;
+					a[i][j] = num;
+					num++;
+				}
+			}
+		}
+	}
+   for (i = 0; i < n; i++){
+		for (j = 0; j < n; j++)
+			printf("%4d", a[i][j]);
+		printf("\n");
+	}
+	return 0;
+}
