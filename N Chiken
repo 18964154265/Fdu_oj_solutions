@@ -1,0 +1,18 @@
+#include<stdio.h>
+int main()
+
+{
+	int money, num;
+	scanf("%d%d", &num, &money);
+	int flag = 0;
+	int cock = 0, hen = 0, chick = 0;
+	for (cock = 0; cock <= money / 5; cock++){
+		for (hen = 0; hen <= money / 3; hen++){
+			for (chick = 0; chick / 3 <= money; chick += 3){
+				if (cock + hen + chick == num && 5 * cock + 3 * hen + chick / 3 == money) { printf("公鸡%d只；母鸡%d只；小鸡%d只\n", cock, hen, chick); flag = 1; }
+			}
+		}
+	}
+	if (flag == 0) printf("无法刚好用%d文钱买%d只鸡！", money, num);
+	return 0;
+}
