@@ -1,0 +1,17 @@
+#include<stdio.h>
+#define N 100
+int num[N] = { 0 }; int Num[N] = { 0 };
+int main()
+{
+	int n; int i, j, k = 1;
+	scanf("%d", &n);
+	for (i = 1; i <= n; i++)scanf("%d", &num[i]);
+	for (i = 1; i <= n; i++){
+		int flag = 1; for (j = 1; j <= i - 1; j++){ if (num[i] == num[j])flag = 0; }
+		if (flag != 0){ Num[k] = num[i]; k++; }
+	}
+	int m = k - 1;
+	for (i = 1; i <= m; i++)printf("%d ", Num[i]);
+
+	return 0;
+}
