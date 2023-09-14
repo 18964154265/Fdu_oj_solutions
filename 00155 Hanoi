@@ -1,0 +1,17 @@
+int count;
+#include<stdio.h>
+int hanoi(int n,char a,char b,char c){
+  
+  if(n==1) count++;
+   else{
+     hanoi(n-1,a,c,b);count++;hanoi(n-1,b,a,c);
+   }
+  return count;
+  }
+int main(){int n;
+           scanf("%d",&n);
+  int m= hanoi(n,'a','b','c');
+  printf("%d",m);
+  return 0;
+  }
+ 
