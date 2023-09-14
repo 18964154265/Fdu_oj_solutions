@@ -1,0 +1,16 @@
+#include<stdio.h>
+#include<string.h>
+#include<math.h>
+int main()
+{
+	char a;
+	scanf("%c", &a);
+	int b = a; 
+	int digit[9]={0}; int len = 0, i = 0; 
+	while (b)
+	{
+		digit[i] = b % 2; b /= 2; len++; i++;
+	}
+	for (i = 7; i >= 0; i--)printf("%d", digit[i]);
+	return 0;
+}
